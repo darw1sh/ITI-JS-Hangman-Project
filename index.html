@@ -13,7 +13,7 @@
     <div class="container">
         <div class="game-info">
             <div class="game-name">Hangman Game</div>
-            <div class="tries">Tries: <span>0</span> / 4
+            <div class="wrongAttempts">Tries: <span>0</span> / 4
             </div>
             <div class="category">
                 Category: <span></span>
@@ -36,10 +36,10 @@
                     </div>
                 </div>
             </div>
-            <div class="letters"></div>
+            <div id="abcde-container" class="abcde"></div>
         </div>
         <hr>
-        <div class="letters-guess"></div>
+        <div id="gussedletters-container" class="letters-guess"></div>
     </div>
     </div>
         <script src="main.js"></script>
