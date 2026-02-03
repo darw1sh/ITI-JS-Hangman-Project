@@ -1,0 +1,221 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    margin: auto;
+    width: 1500px;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+}
+
+hr {
+    border: 1px solid #eaeaea;
+}
+
+.game-info {
+    display: flex;
+}
+
+.game-info .game-name {
+    flex: 1;
+}
+
+.game-info .tries {
+    flex: 1;
+}
+
+.game-info .category {
+    flex: 1;
+    text-align: right;
+    font-weight: bolder;
+}
+
+.game-info .category span {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #a31515;
+}
+
+.draw-container {
+    flex: 1;
+    background-color: #eeeeee;
+    padding: 14px;
+    height: 620px;
+}
+
+.draw-container .draw {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    height: 95%;
+    background-color: white;
+    border-bottom: 2px solid #cccccc;
+    border-top: 2px solid #cccccc;
+}
+
+.draw-container .draw .stand-base {
+    width: 200px;
+    height: 20px;
+    background-color: #000000;
+    position: absolute;
+    bottom: 33px;
+    left: 43px;
+}
+
+.draw-container .draw .stand1 {
+    width: 20px;
+    height: 358px;
+    background-color: #000000;
+    position: absolute;
+    bottom: 34px;
+    left: 141px;
+}
+
+.draw-container .draw .stand2 {
+    width: 188px;
+    height: 20px;
+    background-color: #000000;
+    position: absolute;
+    bottom: 391px;
+    left: 141px;
+}
+
+.draw-container .draw .stand3 {
+    width: 20px;
+    height: 73px;
+    background-color: #000000;
+    position: absolute;
+    bottom: 318px;
+    left: 308px;
+}
+
+.draw-container .draw .rope {
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left: 275px;
+    top: 239px;
+    border: 4px dashed #000000;
+}
+
+.draw-container .draw .head {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    left: 284px;
+    top: 248px;
+    border: 4px solid #000000;
+}
+
+.draw-container .draw .body {
+    width: 4px;
+    height: 120px;
+    background-color: #000000;
+    position: absolute;
+    left: 315px;
+    top: 318px;
+}
+
+.draw-container .draw .hands::before {
+    content: '';
+    width: 4px;
+    height: 80px;
+    background-color: #000000;
+    position: absolute;
+    left: 280px;
+    top: 313px;
+    transform: rotate(-58deg);
+}
+
+.draw-container .draw .hands::after {
+    content: '';
+    width: 4px;
+    height: 80px;
+    background-color: #000000;
+    position: absolute;
+    left: 348px;
+    top: 313px;
+    transform: rotate(58deg);
+}
+
+.draw-container .draw .legs::before {
+    content: '';
+    width: 4px;
+    height: 80px;
+    background-color: #000000;
+    position: absolute;
+    left: 294px;
+    top: 433px;
+    transform: rotate(30deg);
+}
+
+.draw-container .draw .legs::after {
+    content: '';
+    width: 4px;
+    height: 80px;
+    background-color: #000000;
+    position: absolute;
+    left: 334px;
+    top: 433px;
+    transform: rotate(-30deg);
+}
+
+.letters {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.letters .letter-box {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border: 2px solid #000000;
+    margin: 5px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.letters .letter-box.clicked {
+    background-color: #cccccc;
+    cursor: default;
+    pointer-events: none;
+}
+
+.letters-guess {
+    margin: 10px auto;
+    background-color: #eaeaea;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 104px;
+}
+
+.letters-guess span {
+    font-size: 32px;
+    margin: 10px 10px;
+    border-bottom: 2px solid #000000;
+    width: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #ffffff;
+}
+
+.letters-guess .space {
+    border: none;
+    background-color: transparent;
+    width: 30px;
+}
+ 
