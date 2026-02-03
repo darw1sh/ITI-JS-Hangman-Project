@@ -19,7 +19,7 @@ lettersAray.forEach(function (letter) {
 });
 
 var words = {
-    programming: ["php", "javascript", "go", "scala", "fortran", "r", "mysql", "python"],
+    programming: ["php", "javascript", "go", "scala", "fortran", "mysql", "python"],
     movies: ["prestige", "inception", "parasite", "interstellar", "whiplash", "memento", "coco", "up"],
     people: ["albert einstein", "isaac newton", "marie curie", "galileo galilei", "nikola tesla", "charles darwin"],
     countries: ["argentina", "belgium", "brazil", "denmark", "egypt", "finland", "germany", "hungary"]
@@ -47,6 +47,10 @@ categorySpan.textContent = randomPropertyName;
 
 var lettersGuessContainer = document.querySelector(".letters-guess");
 
+var theManParts = document.querySelectorAll(".man div")
+
+console.log(theManParts[3]);
+
 var lettersAndSpace = Array.from(randomWord);
 
 console.log(lettersAndSpace);
@@ -71,6 +75,19 @@ for (var i = 0; i < lettersAray.length; i++) {
     lettersSpan[i].addEventListener("click", doLogic);
 }
 
+function checkTries(currentTries) {
+    if (tries == 1) theManParts[0].style.visibility = "visible";
+    if (tries == 2) theManParts[1].style.visibility = "visible";
+    if (tries == 3) theManParts[2].classList.add("is-visible");
+    if (tries == 4) {
+        theManParts[3].classList.add("is-visible");
+        setTimeout(() => {
+            alert("You have used all the available tries, Game over!");
+            location.reload();
+        }, 500);
+    }
+}
+
 var tries = 0;
 
 function doLogic(e) {
@@ -89,8 +106,9 @@ function doLogic(e) {
                 guessedLetters[index].textContent = arrElement;
             }
         })
-    }else{
-        tries +=1;
+    } else {
+        tries += 1;
         triesElement.textContent = tries;
+        checkTries(tries);
     }
 }
